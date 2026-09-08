@@ -124,7 +124,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
             value={dateValue}
             onChange={(e) => onDateChange(e.target.value)}
             disabled={isNow}
-            className="w-full text-xs sm:text-sm font-medium bg-transparent text-neutral-900 dark:text-neutral-100 focus:outline-none disabled:opacity-80 disabled:cursor-default [color-scheme:light] dark:[color-scheme:dark]"
+            className="w-full text-xs sm:text-[14px] font-semibold font-mono tracking-tight bg-transparent text-neutral-900 dark:text-neutral-100 focus:outline-none disabled:opacity-80 disabled:cursor-default [color-scheme:light] dark:[color-scheme:dark]"
             aria-label={`${label} datum`}
           />
         </div>
@@ -146,7 +146,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
             value={timeValue}
             onChange={(e) => onTimeChange(e.target.value)}
             disabled={isNow}
-            className="w-full text-xs sm:text-sm font-medium font-mono tabular-nums bg-transparent text-neutral-900 dark:text-neutral-100 focus:outline-none disabled:opacity-80 disabled:cursor-default [color-scheme:light] dark:[color-scheme:dark]"
+            className="w-full text-xs sm:text-[14px] font-semibold font-mono tabular-nums tracking-tight bg-transparent text-neutral-900 dark:text-neutral-100 focus:outline-none disabled:opacity-80 disabled:cursor-default [color-scheme:light] dark:[color-scheme:dark]"
             aria-label={`${label} tid`}
           />
         </div>

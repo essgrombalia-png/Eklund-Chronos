@@ -45,6 +45,7 @@ import { Toast } from './components/Toast';
 import { Footer } from './components/Footer';
 import { downloadDataAsPng } from './utils/exportPng';
 import { downloadDataAsCsv } from './utils/exportCsv';
+import wallpaperBg from './assets/images/aluminium_os_bg_1788863498137.jpg';
 
 export default function App() {
   // Theme state
@@ -478,6 +479,20 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-canvas-pattern text-neutral-900 dark:text-neutral-100 transition-colors relative overflow-hidden">
+      {/* Full-bleed fixed OS wallpaper background image */}
+      <div className="wallpaper-background-layer fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <img
+          src={wallpaperBg}
+          alt="Modern OS Wallpaper Background"
+          referrerPolicy="no-referrer"
+          className="w-full h-full object-cover object-center select-none"
+        />
+        {/* Harmonizing atmospheric tint layer to guarantee pristine WCAG AA contrast & typography legibility */}
+        <div className="absolute inset-0 bg-white/25 dark:bg-[#07090e]/65 backdrop-blur-[1px] transition-colors" />
+        {/* Subtle radial vignette gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/30 dark:from-black/40 dark:via-transparent dark:to-black/60 pointer-events-none" />
+      </div>
+
       {/* Background ambient lighting and micro-grid */}
       <div className="bg-grid-overlay" aria-hidden="true" />
       <div className="ambient-glow-top" aria-hidden="true" />

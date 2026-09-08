@@ -82,10 +82,10 @@ export const DurationBreakdown: React.FC<DurationBreakdownProps> = ({
       className="glass-card rounded-2xl overflow-hidden hover:shadow-xl dark:hover:shadow-black/50 transition-all duration-300 ease-out hover:scale-[1.008]"
     >
       <div className="px-4 py-3.5 sm:px-6 sm:py-4 border-b border-white/60 dark:border-white/10 flex items-center justify-between">
-        <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+        <span className="text-xs font-bold uppercase tracking-wider text-neutral-600 dark:text-neutral-300 font-mono">
           Totalt tidsintervall
         </span>
-        <span className="text-[11px] sm:text-xs text-neutral-400 dark:text-neutral-500">
+        <span className="text-[11px] sm:text-xs text-neutral-400 dark:text-neutral-500 font-mono">
           Klicka för att kopiera
         </span>
       </div>
@@ -107,20 +107,20 @@ export const DurationBreakdown: React.FC<DurationBreakdownProps> = ({
             }}
           >
             <div className="flex items-center justify-between mb-1 sm:mb-1.5">
-              <span className="text-[11px] font-medium uppercase tracking-wider text-neutral-400 dark:text-neutral-500 truncate">
+              <span className="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 truncate font-mono">
                 {item.label}
               </span>
               <Copy className="w-3 h-3 text-neutral-300 dark:text-neutral-600 opacity-0 group-hover:opacity-100 sm:group-hover:opacity-100 transition-opacity shrink-0" />
             </div>
 
             <div
-              className="text-base xs:text-lg sm:text-2xl font-semibold text-neutral-900 dark:text-neutral-100 font-mono tracking-tight tabular-nums truncate"
+              className="text-base xs:text-lg sm:text-2xl font-bold text-neutral-900 dark:text-neutral-50 font-mono tracking-tight tabular-nums truncate"
               title={`${item.value} ${item.unit}`}
             >
               {item.value}
             </div>
 
-            <div className="text-[10px] text-neutral-400 dark:text-neutral-500 font-mono mt-0.5 truncate">
+            <div className="text-[11px] text-neutral-400 dark:text-neutral-500 font-mono mt-0.5 truncate font-medium">
               {item.unit}
             </div>
           </div>

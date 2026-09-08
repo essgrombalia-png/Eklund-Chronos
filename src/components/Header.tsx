@@ -50,10 +50,10 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="text-sm sm:text-base font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+              <span className="font-display text-sm sm:text-base font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
                 Eklund Chronos
               </span>
-              <span className="hidden xs:inline-block text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800/90 text-neutral-600 dark:text-neutral-400 font-medium border border-neutral-200/60 dark:border-neutral-700/50">
+              <span className="hidden xs:inline-block text-[10px] uppercase font-mono tracking-widest px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800/90 text-neutral-600 dark:text-neutral-400 font-semibold border border-neutral-200/60 dark:border-neutral-700/50">
                 Precision
               </span>
             </div>

@@ -117,17 +117,17 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
       {/* Main hero visualization */}
       {isHumanReadable ? (
         <div className="relative z-10 py-3 sm:py-4">
-          <p className="text-xs uppercase tracking-wider font-semibold text-neutral-400 dark:text-neutral-500 mb-2">
+          <p className="text-[11px] uppercase tracking-widest font-semibold text-neutral-400 dark:text-neutral-500 mb-2 font-mono">
             Uppskattad tid
           </p>
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 capitalize leading-tight break-words">
+          <h2 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 capitalize leading-tight break-words">
             {humanSentence}
           </h2>
 
           <div className="mt-4 pt-4 border-t border-neutral-100 dark:border-neutral-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 break-words">
               Exakt:{' '}
-              <span className="font-mono tabular-nums text-neutral-700 dark:text-neutral-300">
+              <span className="font-mono tabular-nums text-neutral-800 dark:text-neutral-200 font-medium">
                 {exactSentence}
               </span>
             </p>
@@ -149,7 +149,7 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
         <div className="relative z-10 flex flex-col gap-2.5 py-1">
           {/* Primary calendar block: År · Månader · Dagar */}
           <div className="flex items-baseline">
-            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 tabular-nums leading-tight break-words">
+            <h2 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50 tabular-nums leading-tight break-words">
               {primaryFormatted}
             </h2>
           </div>
@@ -158,13 +158,13 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
           <div className="flex items-center gap-2 sm:gap-3 mt-1.5 sm:mt-2 flex-wrap">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-neutral-400 dark:text-neutral-500 shrink-0" />
-              <span className="text-base xs:text-lg sm:text-2xl md:text-3xl font-medium font-mono tracking-wider text-neutral-700 dark:text-neutral-300 tabular-nums inline-flex items-center">
+              <span className="text-base xs:text-lg sm:text-2xl md:text-3xl font-semibold font-mono tracking-tight text-neutral-800 dark:text-neutral-200 tabular-nums inline-flex items-center">
                 <FlipTimeDisplay timeFormatted={timeFormatted} />
               </span>
             </div>
 
             <div className="flex items-center gap-1.5">
-              <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500 select-none">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-neutral-400 dark:text-neutral-500 select-none font-medium">
                 tim · min · sek
               </span>
               {isLive && (
@@ -178,10 +178,10 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
 
           {!result.workingDaysInfo?.isWorkingDaysOnly && result.workingDaysInfo && (
             <div className="mt-2 flex items-center gap-1.5 text-xs text-neutral-500 dark:text-neutral-400 flex-wrap">
-              <Briefcase className="w-3 h-3 text-neutral-400 dark:text-neutral-500 shrink-0" />
+              <Briefcase className="w-3.5 h-3.5 text-neutral-400 dark:text-neutral-500 shrink-0" />
               <span>
                 Motsvarar ca{' '}
-                <span className="font-semibold text-neutral-700 dark:text-neutral-300 tabular-nums">
+                <span className="font-semibold text-neutral-800 dark:text-neutral-200 font-mono tabular-nums">
                   {result.workingDaysInfo.workingDays}
                 </span>{' '}
                 arbetsdagar ({result.workingDaysInfo.workingWeeks} v) exkl. helger
@@ -191,7 +191,7 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
 
           {/* Full natural sentence description */}
           <div className="mt-4 pt-4 border-t border-neutral-100 dark:border-neutral-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+            <p className="text-xs sm:text-[14px] text-neutral-600 dark:text-neutral-300 leading-relaxed font-normal">
               {exactSentence}
             </p>
 
