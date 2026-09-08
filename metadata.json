@@ -1,0 +1,6 @@
+{
+  "name": "Chronos",
+  "description": "Avancerad och precis tids- och datumberäkning med millisekundsnoggrannhet, tidszonsstöd och realtidsräknare.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
