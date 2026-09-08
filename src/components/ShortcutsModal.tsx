@@ -21,13 +21,14 @@ export const ShortcutsModal: React.FC<ShortcutsModalProps> = ({ isOpen, onClose 
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/40 backdrop-blur-xs animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-sm modal-backdrop-animate"
       role="dialog"
       aria-modal="true"
       aria-labelledby="shortcuts-modal-title"
+      onClick={onClose}
     >
       <div
-        className="w-full max-w-md max-h-[90vh] sm:max-h-[85vh] bg-white dark:bg-[#14171B] border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 flex flex-col"
+        className="w-full max-w-md max-h-[90vh] sm:max-h-[85vh] bg-white dark:bg-[#14171B] border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-2xl overflow-hidden modal-dialog-animate flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="px-4 py-3.5 sm:px-5 sm:py-4 border-b border-neutral-100 dark:border-neutral-800 flex items-center justify-between shrink-0">

@@ -79,9 +79,9 @@ export const DurationBreakdown: React.FC<DurationBreakdownProps> = ({
   return (
     <div
       id="duration-breakdown-container"
-      className="rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 backdrop-blur-xl overflow-hidden shadow-xs ring-1 ring-black/[0.03] dark:ring-white/[0.04]"
+      className="glass-card rounded-2xl overflow-hidden hover:shadow-xl dark:hover:shadow-black/50 transition-all duration-300 ease-out hover:scale-[1.008]"
     >
-      <div className="px-4 py-3.5 sm:px-6 sm:py-4 border-b border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between">
+      <div className="px-4 py-3.5 sm:px-6 sm:py-4 border-b border-white/60 dark:border-white/10 flex items-center justify-between">
         <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
           Totalt tidsintervall
         </span>
@@ -90,12 +90,12 @@ export const DurationBreakdown: React.FC<DurationBreakdownProps> = ({
         </span>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y divide-neutral-100 dark:divide-neutral-800/80">
+      <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y divide-white/60 dark:divide-white/10">
         {statItems.map((item) => (
           <div
             key={item.id}
             onClick={() => onCopyText(item.rawNumber, `${item.label} kopierat`)}
-            className="group relative p-3.5 sm:p-5 hover:bg-neutral-50/80 dark:hover:bg-neutral-800/40 active:bg-neutral-100 dark:active:bg-neutral-800/70 transition-colors cursor-pointer"
+            className="group relative p-3.5 sm:p-5 hover:bg-white/60 dark:hover:bg-white/5 active:bg-white/80 dark:active:bg-white/10 transition-colors cursor-pointer"
             role="button"
             tabIndex={0}
             aria-label={`Kopiera ${item.label}: ${item.value}`}
@@ -127,7 +127,7 @@ export const DurationBreakdown: React.FC<DurationBreakdownProps> = ({
         ))}
 
         {/* 8th cell: summary note */}
-        <div className="p-3.5 sm:p-5 flex flex-col justify-between bg-neutral-50/40 dark:bg-neutral-900/30">
+        <div className="p-3.5 sm:p-5 flex flex-col justify-between bg-white/30 dark:bg-black/20">
           <span className="text-[11px] font-medium uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
             Precision
           </span>
@@ -139,8 +139,8 @@ export const DurationBreakdown: React.FC<DurationBreakdownProps> = ({
 
       {/* Dedicated Workdays & Weekends breakdown section */}
       {workingDaysInfo && (
-        <div className="border-t border-neutral-200/90 dark:border-neutral-800/90 bg-neutral-50/50 dark:bg-[#111418]">
-          <div className="px-4 py-3 sm:px-6 flex items-center justify-between border-b border-neutral-200/60 dark:border-neutral-800/70">
+        <div className="border-t border-white/60 dark:border-white/10 bg-white/35 dark:bg-black/25">
+          <div className="px-4 py-3 sm:px-6 flex items-center justify-between border-b border-white/50 dark:border-white/10">
             <div className="flex items-center gap-2">
               <Briefcase className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
               <span className="text-xs font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
@@ -152,7 +152,7 @@ export const DurationBreakdown: React.FC<DurationBreakdownProps> = ({
             </span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-neutral-200/60 dark:divide-neutral-800/70">
+          <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-white/50 dark:divide-white/10">
             {/* Arbetsdagar */}
             <div
               onClick={() =>

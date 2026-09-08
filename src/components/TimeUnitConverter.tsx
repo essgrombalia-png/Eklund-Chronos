@@ -244,7 +244,7 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
   return (
     <section
       id="time-unit-converter-section"
-      className="p-5 sm:p-7 md:p-8 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 backdrop-blur-xl shadow-xs sm:shadow-lg sm:shadow-black/5 dark:shadow-black/30 ring-1 ring-black/[0.03] dark:ring-white/[0.04] transition-all"
+      className="glass-card p-5 sm:p-7 md:p-8 rounded-2xl hover:shadow-xl dark:hover:shadow-black/50 transition-all duration-300 ease-out hover:scale-[1.008]"
     >
       {/* Header bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-neutral-100 dark:border-neutral-800/80">
@@ -341,7 +341,7 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
       </div>
 
       {/* Interactive Dual-Unit Converter Controls */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 items-center bg-neutral-50/60 dark:bg-neutral-900/40 p-4 sm:p-5 rounded-xl border border-neutral-200/80 dark:border-neutral-800/80">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 items-center bg-white/40 dark:bg-neutral-900/30 backdrop-blur-md p-4 sm:p-5 rounded-xl border border-white/60 dark:border-white/10 shadow-2xs">
         {/* Input Value */}
         <div className="md:col-span-4 flex flex-col gap-1.5">
           <label
@@ -358,7 +358,7 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Ange antal..."
-              className="w-full min-h-[44px] px-3.5 py-2 text-base font-mono font-semibold bg-white dark:bg-[#13161B] border border-neutral-200 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-1 focus:ring-neutral-900 dark:focus:ring-neutral-300 text-neutral-900 dark:text-neutral-100 [color-scheme:light] dark:[color-scheme:dark]"
+              className="w-full min-h-[44px] px-3.5 py-2 text-base font-mono font-semibold bg-white/70 dark:bg-[#13161B]/70 backdrop-blur-md border border-neutral-200/80 dark:border-neutral-700/60 rounded-xl focus:outline-none focus:ring-1 focus:ring-neutral-900 dark:focus:ring-neutral-300 text-neutral-900 dark:text-neutral-100 [color-scheme:light] dark:[color-scheme:dark]"
             />
             {/* Quick adjust buttons */}
             <div className="absolute right-1.5 flex items-center gap-1">
@@ -522,10 +522,10 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
                     handleCopy(formatted, `unit-${unit.key}`, `${label} kopierat`);
                   }
                 }}
-                className={`group relative p-3 rounded-xl border text-left cursor-pointer transition-all active:scale-98 ${
+                className={`group relative p-3 rounded-xl border text-left cursor-pointer backdrop-blur-md transition-all active:scale-98 ${
                   isCurrentTo
-                    ? 'border-neutral-900 dark:border-neutral-400 bg-neutral-50 dark:bg-neutral-800/40 ring-1 ring-neutral-900/10 dark:ring-neutral-400/10'
-                    : 'border-neutral-200/90 dark:border-neutral-800 bg-white dark:bg-[#13161B] hover:border-neutral-300 dark:hover:border-neutral-700 hover:bg-neutral-50/70 dark:hover:bg-neutral-800/30'
+                    ? 'border-neutral-900/90 dark:border-neutral-300 bg-white/90 dark:bg-neutral-800/60 ring-1 ring-neutral-900/10 dark:ring-neutral-400/15 shadow-xs'
+                    : 'border-white/70 dark:border-white/10 bg-white/50 dark:bg-[#13161B]/50 hover:border-neutral-300/80 dark:hover:border-neutral-600 hover:bg-white/80 dark:hover:bg-neutral-800/40 shadow-2xs'
                 }`}
                 title={`Kopiera ${formatted} ${label}`}
               >

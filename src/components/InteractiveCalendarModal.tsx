@@ -379,14 +379,14 @@ export const InteractiveCalendarModal: React.FC<InteractiveCalendarModalProps> =
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-black/50 backdrop-blur-md animate-in fade-in duration-150 overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-4 bg-black/50 backdrop-blur-sm modal-backdrop-animate overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="calendar-modal-title"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl bg-white dark:bg-[#11141B] border border-neutral-200/90 dark:border-neutral-800/90 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 flex flex-col my-auto"
+        className="relative w-full max-w-2xl bg-white dark:bg-[#11141B] border border-neutral-200/90 dark:border-neutral-800/90 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden modal-dialog-animate flex flex-col my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Bar */}

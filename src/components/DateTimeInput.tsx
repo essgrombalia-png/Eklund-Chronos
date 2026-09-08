@@ -48,12 +48,12 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
   return (
     <div
       id={`${idPrefix}-container`}
-      className={`relative p-3.5 sm:p-5 rounded-2xl border backdrop-blur-xl transition-all ${
+      className={`glass-card relative p-3.5 sm:p-5 rounded-2xl transition-all duration-300 ease-out hover:scale-[1.008] hover:shadow-lg dark:hover:shadow-black/50 ${
         errorMessage
-          ? 'border-rose-300 dark:border-rose-900/60 bg-rose-50/40 dark:bg-rose-950/25 ring-1 ring-rose-500/10'
+          ? '!border-rose-300 dark:!border-rose-900/60 !bg-rose-50/30 dark:!bg-rose-950/20 ring-1 ring-rose-500/10'
           : isNow
-          ? 'border-emerald-300/70 dark:border-emerald-500/30 bg-white/90 dark:bg-[#11141b]/90 shadow-sm ring-1 ring-emerald-500/15'
-          : 'border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 shadow-xs ring-1 ring-black/[0.03] dark:ring-white/[0.04]'
+          ? '!border-emerald-300/80 dark:!border-emerald-500/40 !bg-emerald-50/20 dark:!bg-emerald-950/20 ring-1 ring-emerald-500/15'
+          : ''
       }`}
     >
       {/* Header bar with label, interactive calendar trigger, and "Nu" toggle */}
@@ -63,7 +63,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
             {label}
           </span>
           {isNow && (
-            <span className="flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-medium font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-800/60 rounded-md">
+            <span className="flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-medium font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50/80 dark:bg-emerald-950/50 border border-emerald-200/80 dark:border-emerald-800/60 rounded-md">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               LIVE
             </span>
@@ -110,10 +110,10 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
         {/* Date input */}
         <div
           onClick={handleDateContainerClick}
-          className={`sm:col-span-3 min-h-[44px] sm:min-h-[42px] min-w-0 relative flex items-center px-3 py-2 border rounded-xl transition-colors cursor-pointer group ${
+          className={`sm:col-span-3 min-h-[44px] sm:min-h-[42px] min-w-0 relative flex items-center px-3 py-2 border rounded-xl backdrop-blur-md transition-all cursor-pointer group ${
             isNow
-              ? 'bg-neutral-100/70 dark:bg-neutral-800/40 border-neutral-200 dark:border-neutral-700/50 cursor-default'
-              : 'bg-white dark:bg-neutral-900/80 border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 focus-within:border-neutral-900 dark:focus-within:border-neutral-400 focus-within:ring-1 focus-within:ring-neutral-900 dark:focus-within:ring-neutral-400'
+              ? 'bg-neutral-100/50 dark:bg-neutral-800/30 border-neutral-200/60 dark:border-neutral-700/40 cursor-default'
+              : 'bg-white/60 dark:bg-neutral-900/50 border-neutral-200/80 dark:border-neutral-700/60 hover:border-neutral-300 dark:hover:border-neutral-600 focus-within:border-neutral-900 dark:focus-within:border-neutral-400 focus-within:ring-1 focus-within:ring-neutral-900 dark:focus-within:ring-neutral-400 shadow-2xs'
           }`}
         >
           <Calendar className="w-4 h-4 text-neutral-400 group-hover:text-sky-500 dark:text-neutral-500 dark:group-hover:text-sky-400 mr-2.5 shrink-0 transition-colors" />
@@ -131,10 +131,10 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
 
         {/* Time input */}
         <div
-          className={`sm:col-span-2 min-h-[44px] sm:min-h-[42px] min-w-0 relative flex items-center px-3 py-2 border rounded-xl transition-colors ${
+          className={`sm:col-span-2 min-h-[44px] sm:min-h-[42px] min-w-0 relative flex items-center px-3 py-2 border rounded-xl backdrop-blur-md transition-all ${
             isNow
-              ? 'bg-neutral-100/70 dark:bg-neutral-800/40 border-neutral-200 dark:border-neutral-700/50 cursor-default'
-              : 'bg-white dark:bg-neutral-900/80 border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 focus-within:border-neutral-900 dark:focus-within:border-neutral-400 focus-within:ring-1 focus-within:ring-neutral-900 dark:focus-within:ring-neutral-400'
+              ? 'bg-neutral-100/50 dark:bg-neutral-800/30 border-neutral-200/60 dark:border-neutral-700/40 cursor-default'
+              : 'bg-white/60 dark:bg-neutral-900/50 border-neutral-200/80 dark:border-neutral-700/60 hover:border-neutral-300 dark:hover:border-neutral-600 focus-within:border-neutral-900 dark:focus-within:border-neutral-400 focus-within:ring-1 focus-within:ring-neutral-900 dark:focus-within:ring-neutral-400 shadow-2xs'
           }`}
         >
           <Clock className="w-4 h-4 text-neutral-400 dark:text-neutral-500 mr-2.5 shrink-0 pointer-events-none" />

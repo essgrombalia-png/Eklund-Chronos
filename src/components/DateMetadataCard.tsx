@@ -105,12 +105,12 @@ export const DateMetadataCard: React.FC<DateMetadataCardProps> = ({
   return (
     <div
       id="date-details-container"
-      className="rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 backdrop-blur-xl overflow-hidden shadow-xs ring-1 ring-black/[0.03] dark:ring-white/[0.04]"
+      className="glass-card rounded-2xl overflow-hidden hover:shadow-xl dark:hover:shadow-black/50 transition-all duration-300 ease-out hover:scale-[1.008]"
     >
       <button
         type="button"
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between text-left hover:bg-neutral-50/50 dark:hover:bg-neutral-800/30 active:bg-neutral-100 dark:active:bg-neutral-800/60 transition-colors"
+        className="w-full px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between text-left hover:bg-white/50 dark:hover:bg-white/5 active:bg-white/70 dark:active:bg-white/10 transition-colors"
         aria-expanded={isExpanded}
       >
         <div className="flex items-center gap-2">
@@ -130,9 +130,9 @@ export const DateMetadataCard: React.FC<DateMetadataCardProps> = ({
       </button>
 
       {isExpanded && (
-        <div className="px-4 pb-5 pt-2 sm:px-6 sm:pb-6 border-t border-neutral-100 dark:border-neutral-800/80 flex flex-col md:flex-row gap-5 sm:gap-6">
+        <div className="px-4 pb-5 pt-2 sm:px-6 sm:pb-6 border-t border-white/60 dark:border-white/10 flex flex-col md:flex-row gap-5 sm:gap-6">
           {renderColumn('Startdatum detaljer', startMetadata)}
-          <div className="hidden md:block w-[1px] bg-neutral-200/80 dark:border-neutral-800/80 self-stretch" />
+          <div className="hidden md:block w-[1px] bg-white/60 dark:bg-white/10 self-stretch" />
           {renderColumn('Slutdatum detaljer', endMetadata)}
         </div>
       )}

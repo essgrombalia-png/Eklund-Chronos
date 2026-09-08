@@ -90,7 +90,7 @@ export const Timeline: React.FC<TimelineProps> = ({
   return (
     <div
       id="timeline-section"
-      className="p-4 sm:p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 backdrop-blur-xl shadow-xs ring-1 ring-black/[0.03] dark:ring-white/[0.04] transition-all"
+      className="glass-card p-4 sm:p-6 rounded-2xl hover:shadow-xl dark:hover:shadow-black/50 transition-all duration-300 ease-out hover:scale-[1.008]"
     >
       {/* Header bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 mb-4 sm:mb-5">

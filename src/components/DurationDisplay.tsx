@@ -37,10 +37,10 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
   return (
     <div
       id="duration-hero-container"
-      className="relative p-5 sm:p-7 md:p-8 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 backdrop-blur-xl shadow-xs sm:shadow-lg sm:shadow-black/5 dark:shadow-black/40 ring-1 ring-black/[0.03] dark:ring-white/[0.04] transition-all overflow-hidden"
+      className="glass-card relative p-5 sm:p-7 md:p-8 rounded-2xl hover:shadow-xl dark:hover:shadow-black/60 transition-all duration-300 ease-out hover:scale-[1.008] overflow-hidden"
     >
       {/* Subtle ambient light gradient in top corner */}
-      <div className="absolute -top-16 -right-16 w-64 h-64 bg-indigo-500/5 dark:bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -top-16 -right-16 w-72 h-72 bg-gradient-to-br from-indigo-500/10 via-sky-500/10 to-transparent dark:from-sky-500/15 dark:via-indigo-500/10 dark:to-transparent rounded-full blur-3xl pointer-events-none" />
 
       {/* Top status bar with direction tag & Exakt / Lättläst switch */}
       <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-3 mb-4 sm:mb-6">

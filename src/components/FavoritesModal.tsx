@@ -40,13 +40,14 @@ export const FavoritesModal: React.FC<FavoritesModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/40 backdrop-blur-xs animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-sm modal-backdrop-animate"
       role="dialog"
       aria-modal="true"
       aria-labelledby="favorites-modal-title"
+      onClick={onClose}
     >
       <div
-        className="w-full max-w-lg max-h-[90vh] sm:max-h-[85vh] bg-white dark:bg-[#14171B] border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-150"
+        className="w-full max-w-lg max-h-[90vh] sm:max-h-[85vh] bg-white dark:bg-[#14171B] border border-neutral-200 dark:border-neutral-800 rounded-2xl shadow-2xl flex flex-col overflow-hidden modal-dialog-animate"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
