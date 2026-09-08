@@ -212,9 +212,9 @@ export async function generateExportCanvas(
   // App title & badge
   ctx.fillStyle = colors.textPrimary;
   ctx.font = '600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-  ctx.fillText('Chronos', paddingX + 56, currentY + 26);
+  ctx.fillText('Eklund Chronos', paddingX + 56, currentY + 26);
 
-  const titleWidth = ctx.measureText('Chronos').width;
+  const titleWidth = ctx.measureText('Eklund Chronos').width;
 
   // Badge "DATA EXPORT"
   ctx.fillStyle = colors.badgeBg;
@@ -609,7 +609,7 @@ export async function generateExportCanvas(
 
   ctx.fillStyle = colors.textMuted;
   ctx.font = '400 11px "JetBrains Mono", monospace';
-  ctx.fillText('chronos-app • png-export', paddingX + contentWidth - 165, currentY + 10);
+  ctx.fillText('eklund-chronos • png-export', paddingX + contentWidth - 195, currentY + 10);
 
   return canvas;
 }
@@ -640,7 +640,7 @@ export async function downloadDataAsPng(
           ? 'historik'
           : 'export';
 
-      link.download = `chronos-${suffix}-${dateStr}.png`;
+      link.download = `eklund-chronos-${suffix}-${dateStr}.png`;
       link.href = url;
       document.body.appendChild(link);
       link.click();

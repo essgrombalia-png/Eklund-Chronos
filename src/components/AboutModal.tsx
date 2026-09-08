@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import logo3D from '../assets/images/chronos_3d_logo_1788860962599.jpg';
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -21,12 +22,20 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="px-4 py-3.5 sm:px-5 sm:py-4 border-b border-neutral-100 dark:border-neutral-800 flex items-center justify-between shrink-0">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 rounded-lg overflow-hidden shadow-xs ring-1 ring-black/10 dark:ring-white/10 shrink-0">
+              <img
+                src={logo3D}
+                alt="Eklund Chronos 3D Logo"
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
             <h3
               id="about-modal-title"
               className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-neutral-100"
             >
-              Om Chronos
+              Om Eklund Chronos
             </h3>
             <span className="text-[10px] font-mono font-medium px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400">
               v1.0.0
@@ -45,7 +54,7 @@ export const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
 
         <div className="p-4 sm:p-5 space-y-4 text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed overflow-y-auto overscroll-contain flex-1">
           <p>
-            <strong className="text-neutral-900 dark:text-neutral-100 font-semibold">Chronos</strong> är en
+            <strong className="text-neutral-900 dark:text-neutral-100 font-semibold">Eklund Chronos</strong> är en
             högprecisionsapplikation för beräkning av tidsintervall, nedräkningar och kalenderdata.
           </p>
 

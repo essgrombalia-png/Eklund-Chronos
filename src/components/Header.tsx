@@ -1,6 +1,6 @@
 import React from 'react';
+import logo3D from '../assets/images/chronos_3d_logo_1788860962599.jpg';
 import {
-  Clock,
   History,
   Bookmark,
   Share2,
@@ -39,14 +39,19 @@ export const Header: React.FC<HeaderProps> = ({
     <header className="w-full border-b border-neutral-200/80 dark:border-neutral-800/80 bg-white/80 dark:bg-[#0D0F12]/85 backdrop-blur-md sticky top-0 z-30 transition-colors shadow-2xs">
       <div className="max-w-6xl mx-auto px-3 sm:px-6 h-14 sm:h-15 flex items-center justify-between gap-2">
         {/* Logo & Product identity */}
-        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-          <div className="flex items-center justify-center w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-lg bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-950 font-semibold tracking-tight text-sm shadow-xs ring-1 ring-black/5 dark:ring-white/10">
-            <Clock className="w-4 h-4 stroke-[2.2]" />
+        <div className="flex items-center gap-2.5 shrink-0">
+          <div className="relative flex items-center justify-center w-8.5 h-8.5 sm:w-9 sm:h-9 rounded-xl overflow-hidden shadow-sm shadow-black/15 ring-1 ring-black/10 dark:ring-white/15 bg-neutral-900 group">
+            <img
+              src={logo3D}
+              alt="Eklund Chronos 3D Logo"
+              className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="text-sm sm:text-base font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
-                Chronos
+              <span className="text-sm sm:text-base font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
+                Eklund Chronos
               </span>
               <span className="hidden xs:inline-block text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 rounded bg-neutral-100 dark:bg-neutral-800/90 text-neutral-600 dark:text-neutral-400 font-medium border border-neutral-200/60 dark:border-neutral-700/50">
                 Precision
