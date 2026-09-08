@@ -479,13 +479,15 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-canvas-pattern text-neutral-900 dark:text-neutral-100 transition-colors relative overflow-hidden">
-      {/* Full-bleed fixed OS wallpaper background image */}
+      {/* Full-bleed fixed OS wallpaper background image across all devices */}
       <div className="wallpaper-background-layer fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
         <img
           src={wallpaperBg}
           alt="Modern OS Wallpaper Background"
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-center select-none"
+          loading="eager"
+          decoding="async"
+          className="w-full h-full min-h-[100dvh] object-cover object-center select-none"
         />
         {/* Harmonizing atmospheric tint layer to guarantee pristine WCAG AA contrast & typography legibility */}
         <div className="absolute inset-0 bg-white/25 dark:bg-[#07090e]/65 backdrop-blur-[1px] transition-colors" />

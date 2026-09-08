@@ -66,26 +66,43 @@
 
 .bg-canvas-pattern {
   background-color: #eef2f8;
-  position: relative;
-  min-height: 100vh;
-}
-
-.dark .bg-canvas-pattern {
-  background-color: #080B10;
-  position: relative;
-  min-height: 100vh;
-}
-
-.wallpaper-background-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
+  background-image: url('/assets/wallpaper.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.dark .bg-canvas-pattern {
+  background-color: #080B10;
+  background-image: url('/assets/wallpaper.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.wallpaper-background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 /* Masked precision architectural micro-grid */
