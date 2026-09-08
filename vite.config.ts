@@ -11,7 +11,13 @@ export default defineConfig(() => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['icon.svg', 'manifest.json'],
+        includeAssets: ['icon.svg', 'manifest.json', 'wallpaper.jpg', 'assets/wallpaper.jpg'],
+        workbox: {
+          globPatterns: ['**/*.{js,css,html,svg,png,jpg,jpeg,webp,woff2}'],
+          skipWaiting: true,
+          clientsClaim: true,
+          cleanupOutdatedCaches: true,
+        },
         manifest: {
           id: '/',
           name: 'Chronos — Precision Time Calculator',

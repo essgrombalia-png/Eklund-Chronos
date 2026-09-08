@@ -65,24 +65,14 @@
    ========================================================================== */
 
 .bg-canvas-pattern {
-  background-color: #eef2f8;
-  background-image: url('/assets/wallpaper.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: transparent;
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
 }
 
 .dark .bg-canvas-pattern {
-  background-color: #080B10;
-  background-image: url('/assets/wallpaper.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: transparent;
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;

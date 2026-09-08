@@ -487,12 +487,18 @@ export default function App() {
           referrerPolicy="no-referrer"
           loading="eager"
           decoding="async"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (target.src !== window.location.origin + '/wallpaper.jpg') {
+              target.src = '/wallpaper.jpg';
+            }
+          }}
           className="w-full h-full min-h-[100dvh] object-cover object-center select-none"
         />
         {/* Harmonizing atmospheric tint layer to guarantee pristine WCAG AA contrast & typography legibility */}
-        <div className="absolute inset-0 bg-white/25 dark:bg-[#07090e]/65 backdrop-blur-[1px] transition-colors" />
+        <div className="absolute inset-0 bg-white/10 dark:bg-[#07090e]/45 transition-colors" />
         {/* Subtle radial vignette gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/30 dark:from-black/40 dark:via-transparent dark:to-black/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/20 dark:from-black/30 dark:via-transparent dark:to-black/45 pointer-events-none" />
       </div>
 
       {/* Background ambient lighting and micro-grid */}
