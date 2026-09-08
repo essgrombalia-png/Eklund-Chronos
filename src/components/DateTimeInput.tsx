@@ -110,13 +110,13 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
         {/* Date input */}
         <div
           onClick={handleDateContainerClick}
-          className={`sm:col-span-3 min-h-[44px] sm:min-h-[42px] min-w-0 relative flex items-center px-3 py-2 border rounded-xl backdrop-blur-md transition-all cursor-pointer group ${
+          className={`sm:col-span-3 min-h-[46px] min-w-0 relative flex items-center px-3.5 py-1.5 border rounded-xl backdrop-blur-md transition-all cursor-pointer group ${
             isNow
               ? 'bg-neutral-100/50 dark:bg-neutral-800/30 border-neutral-200/60 dark:border-neutral-700/40 cursor-default'
-              : 'bg-white/60 dark:bg-neutral-900/50 border-neutral-200/80 dark:border-neutral-700/60 hover:border-neutral-300 dark:hover:border-neutral-600 focus-within:border-neutral-900 dark:focus-within:border-neutral-400 focus-within:ring-1 focus-within:ring-neutral-900 dark:focus-within:ring-neutral-400 shadow-2xs'
+              : 'bg-white/70 dark:bg-neutral-900/60 border-neutral-200/80 dark:border-white/10 hover:border-neutral-300 dark:hover:border-neutral-500 focus-within:border-sky-500 dark:focus-within:border-sky-400 focus-within:ring-2 focus-within:ring-sky-500/20 dark:focus-within:ring-sky-400/25 focus-within:shadow-[0_0_14px_rgba(56,189,248,0.25)] shadow-2xs'
           }`}
         >
-          <Calendar className="w-4 h-4 text-neutral-400 group-hover:text-sky-500 dark:text-neutral-500 dark:group-hover:text-sky-400 mr-2.5 shrink-0 transition-colors" />
+          <Calendar className="w-4 h-4 text-neutral-400 group-hover:text-sky-500 dark:text-neutral-400 dark:group-hover:text-sky-400 mr-2.5 shrink-0 transition-colors" />
           <input
             ref={dateInputRef}
             id={`${idPrefix}-date`}
@@ -124,20 +124,20 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
             value={dateValue}
             onChange={(e) => onDateChange(e.target.value)}
             disabled={isNow}
-            className="w-full text-xs sm:text-[14px] font-semibold font-mono tracking-tight bg-transparent text-neutral-900 dark:text-neutral-100 focus:outline-none disabled:opacity-80 disabled:cursor-default [color-scheme:light] dark:[color-scheme:dark]"
+            className="w-full h-8 text-xs sm:text-[14px] font-semibold font-mono tracking-tight bg-transparent text-neutral-900 dark:text-neutral-100 focus:outline-none disabled:opacity-80 disabled:cursor-default [color-scheme:light] dark:[color-scheme:dark]"
             aria-label={`${label} datum`}
           />
         </div>
 
         {/* Time input */}
         <div
-          className={`sm:col-span-2 min-h-[44px] sm:min-h-[42px] min-w-0 relative flex items-center px-3 py-2 border rounded-xl backdrop-blur-md transition-all ${
+          className={`sm:col-span-2 min-h-[46px] min-w-0 relative flex items-center px-3.5 py-1.5 border rounded-xl backdrop-blur-md transition-all ${
             isNow
               ? 'bg-neutral-100/50 dark:bg-neutral-800/30 border-neutral-200/60 dark:border-neutral-700/40 cursor-default'
-              : 'bg-white/60 dark:bg-neutral-900/50 border-neutral-200/80 dark:border-neutral-700/60 hover:border-neutral-300 dark:hover:border-neutral-600 focus-within:border-neutral-900 dark:focus-within:border-neutral-400 focus-within:ring-1 focus-within:ring-neutral-900 dark:focus-within:ring-neutral-400 shadow-2xs'
+              : 'bg-white/70 dark:bg-neutral-900/60 border-neutral-200/80 dark:border-white/10 hover:border-neutral-300 dark:hover:border-neutral-500 focus-within:border-sky-500 dark:focus-within:border-sky-400 focus-within:ring-2 focus-within:ring-sky-500/20 dark:focus-within:ring-sky-400/25 focus-within:shadow-[0_0_14px_rgba(56,189,248,0.25)] shadow-2xs'
           }`}
         >
-          <Clock className="w-4 h-4 text-neutral-400 dark:text-neutral-500 mr-2.5 shrink-0 pointer-events-none" />
+          <Clock className="w-4 h-4 text-neutral-400 dark:text-neutral-400 mr-2.5 shrink-0 pointer-events-none" />
           <input
             ref={timeInputRef}
             id={`${idPrefix}-time`}
@@ -146,7 +146,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
             value={timeValue}
             onChange={(e) => onTimeChange(e.target.value)}
             disabled={isNow}
-            className="w-full text-xs sm:text-[14px] font-semibold font-mono tabular-nums tracking-tight bg-transparent text-neutral-900 dark:text-neutral-100 focus:outline-none disabled:opacity-80 disabled:cursor-default [color-scheme:light] dark:[color-scheme:dark]"
+            className="w-full h-8 text-xs sm:text-[14px] font-semibold font-mono tabular-nums tracking-tight bg-transparent text-neutral-900 dark:text-neutral-100 focus:outline-none disabled:opacity-80 disabled:cursor-default [color-scheme:light] dark:[color-scheme:dark]"
             aria-label={`${label} tid`}
           />
         </div>

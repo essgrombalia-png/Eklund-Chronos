@@ -358,7 +358,7 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Ange antal..."
-              className="w-full min-h-[44px] px-3.5 py-2 text-base font-mono font-semibold bg-white/70 dark:bg-[#13161B]/70 backdrop-blur-md border border-neutral-200/80 dark:border-neutral-700/60 rounded-xl focus:outline-none focus:ring-1 focus:ring-neutral-900 dark:focus:ring-neutral-300 text-neutral-900 dark:text-neutral-100 [color-scheme:light] dark:[color-scheme:dark]"
+              className="w-full min-h-[46px] px-3.5 py-2 text-base font-mono font-semibold bg-white/70 dark:bg-neutral-900/60 backdrop-blur-md border border-neutral-200/80 dark:border-white/10 rounded-xl focus:outline-none focus:border-sky-500 dark:focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 dark:focus:ring-sky-400/25 focus:shadow-[0_0_14px_rgba(56,189,248,0.25)] text-neutral-900 dark:text-neutral-100 [color-scheme:light] dark:[color-scheme:dark]"
             />
             {/* Quick adjust buttons */}
             <div className="absolute right-1.5 flex items-center gap-1">
@@ -396,7 +396,7 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
             id="converter-from-unit"
             value={fromUnit}
             onChange={(e) => setFromUnit(e.target.value as TimeUnitKey)}
-            className="w-full min-h-[44px] px-3 py-2 text-base sm:text-sm font-medium bg-white dark:bg-[#13161B] border border-neutral-200 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-1 focus:ring-neutral-900 dark:focus:ring-neutral-300 text-neutral-900 dark:text-neutral-100 cursor-pointer [color-scheme:light] dark:[color-scheme:dark]"
+            className="w-full min-h-[46px] px-3 py-2 text-base sm:text-sm font-medium bg-white/80 dark:bg-neutral-900/70 backdrop-blur-md border border-neutral-200/80 dark:border-white/10 rounded-xl focus:outline-none focus:border-sky-500 dark:focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 dark:focus:ring-sky-400/25 text-neutral-900 dark:text-neutral-100 cursor-pointer [color-scheme:light] dark:[color-scheme:dark]"
           >
             {TIME_UNITS.map((u) => (
               <option key={u.key} value={u.key}>
@@ -416,7 +416,7 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
             title="Växla enheter"
             aria-label="Växla från- och till-enhet"
           >
-            <ArrowRightLeft className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
+            <ArrowRightLeft className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180 text-sky-600 dark:text-sky-400" />
           </button>
         </div>
 
@@ -432,7 +432,7 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
             id="converter-to-unit"
             value={toUnit}
             onChange={(e) => setToUnit(e.target.value as TimeUnitKey)}
-            className="w-full min-h-[44px] px-3 py-2 text-base sm:text-sm font-medium bg-white dark:bg-[#13161B] border border-neutral-200 dark:border-neutral-700 rounded-xl focus:outline-none focus:ring-1 focus:ring-neutral-900 dark:focus:ring-neutral-300 text-neutral-900 dark:text-neutral-100 cursor-pointer [color-scheme:light] dark:[color-scheme:dark]"
+            className="w-full min-h-[46px] px-3 py-2 text-base sm:text-sm font-medium bg-white/80 dark:bg-neutral-900/70 backdrop-blur-md border border-neutral-200/80 dark:border-white/10 rounded-xl focus:outline-none focus:border-sky-500 dark:focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 dark:focus:ring-sky-400/25 text-neutral-900 dark:text-neutral-100 cursor-pointer [color-scheme:light] dark:[color-scheme:dark]"
           >
             {TIME_UNITS.map((u) => (
               <option key={u.key} value={u.key}>
@@ -443,17 +443,17 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
         </div>
       </div>
 
-      {/* Main Result Card */}
-      <div className="mt-5 p-5 sm:p-6 rounded-xl bg-neutral-900 text-white dark:bg-neutral-950 dark:border dark:border-neutral-800 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
+      {/* Main Result Card with subtle luxury neon glow */}
+      <div className="mt-5 p-5 sm:p-6 rounded-xl bg-neutral-950 text-white border border-sky-500/30 dark:border-sky-500/40 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-[0_0_20px_-4px_rgba(56,189,248,0.2)]">
         <div className="space-y-1.5">
-          <span className="text-[11px] uppercase tracking-wider font-semibold text-neutral-400 dark:text-neutral-400">
+          <span className="text-[11px] uppercase tracking-wider font-semibold text-sky-400 font-mono">
             Beräknat resultat
           </span>
           <div className="flex items-baseline gap-2 flex-wrap">
-            <span className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight font-mono tabular-nums">
+            <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight font-mono tabular-nums text-white drop-shadow-[0_0_12px_rgba(56,189,248,0.3)]">
               {formatNumber(convertedTargetValue, 4)}
             </span>
-            <span className="text-lg sm:text-xl font-medium text-neutral-300">
+            <span className="text-lg sm:text-xl font-medium text-neutral-200 font-chrono">
               {getUnitLabel(toDef, convertedTargetValue)}
             </span>
           </div>

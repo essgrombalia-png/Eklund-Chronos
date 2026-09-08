@@ -78,8 +78,8 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
 
           {/* Live indicator if end is Now */}
           {isLive && (
-            <span className="flex items-center gap-1.5 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-0.5 rounded-full border border-emerald-200/80 dark:border-emerald-800/60">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+            <span className="flex items-center gap-1.5 text-[11px] font-mono font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-950/50 px-2.5 py-0.5 rounded-full border border-emerald-500/30 dark:border-emerald-500/40 shadow-[0_0_12px_rgba(52,211,153,0.25)]">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping neon-pulse-dot" />
               Live ticker
             </span>
           )}
@@ -120,7 +120,7 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
           <p className="text-[11px] uppercase tracking-widest font-semibold text-neutral-400 dark:text-neutral-500 mb-2 font-mono">
             Uppskattad tid
           </p>
-          <h2 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50 capitalize leading-tight break-words">
+          <h2 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-950 dark:text-white neon-hero-title capitalize leading-tight break-words">
             {humanSentence}
           </h2>
 
@@ -147,18 +147,27 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
         </div>
       ) : (
         <div className="relative z-10 flex flex-col gap-2.5 py-1">
-          {/* Primary calendar block: År · Månader · Dagar */}
-          <div className="flex items-baseline">
-            <h2 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-50 tabular-nums leading-tight break-words">
-              {primaryFormatted}
-            </h2>
+          {/* Primary calendar block: År · Månader · Dagar with high-end font and neon separator dots */}
+          <div className="flex items-baseline flex-wrap gap-x-2 sm:gap-x-3 gap-y-1">
+            {primaryFormatted.split('·').map((segment, idx, arr) => (
+              <React.Fragment key={idx}>
+                <span className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold tracking-tight text-neutral-950 dark:text-white neon-hero-title tabular-nums">
+                  {segment.trim()}
+                </span>
+                {idx < arr.length - 1 && (
+                  <span className="text-sky-500 dark:text-sky-400 font-bold select-none text-xl sm:text-3xl lg:text-4xl neon-dot-separator px-0.5">
+                    ·
+                  </span>
+                )}
+              </React.Fragment>
+            ))}
           </div>
 
-          {/* Time row: Timmar : Minuter : Sekunder with smooth flip animation */}
+          {/* Time row: Timmar : Minuter : Sekunder with smooth flip animation and subtle neon lume */}
           <div className="flex items-center gap-2 sm:gap-3 mt-1.5 sm:mt-2 flex-wrap">
             <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-neutral-400 dark:text-neutral-500 shrink-0" />
-              <span className="text-base xs:text-lg sm:text-2xl md:text-3xl font-semibold font-mono tracking-tight text-neutral-800 dark:text-neutral-200 tabular-nums inline-flex items-center">
+              <Clock className="w-4 h-4 text-sky-500 dark:text-sky-400 shrink-0 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
+              <span className="text-base xs:text-lg sm:text-2xl md:text-3xl font-bold font-mono tracking-tight text-neutral-900 dark:text-sky-50 dark:drop-shadow-[0_0_16px_rgba(56,189,248,0.35)] tabular-nums inline-flex items-center">
                 <FlipTimeDisplay timeFormatted={timeFormatted} />
               </span>
             </div>
@@ -169,7 +178,7 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
               </span>
               {isLive && (
                 <span
-                  className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"
+                  className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse neon-pulse-dot"
                   title="Tid tickar i realtid"
                 />
               )}
