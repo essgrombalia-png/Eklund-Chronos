@@ -13,6 +13,7 @@ interface DateTimeInputProps {
   onToggleNow: (isNow: boolean) => void;
   metadata: DateMetadata;
   errorMessage?: string | null;
+  onOpenCalendar?: () => void;
 }
 
 export const DateTimeInput: React.FC<DateTimeInputProps> = ({
@@ -26,11 +27,12 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
   onToggleNow,
   metadata,
   errorMessage,
+  onOpenCalendar,
 }) => {
   const dateInputRef = useRef<HTMLInputElement>(null);
   const timeInputRef = useRef<HTMLInputElement>(null);
 
-  const handleDateContainerClick = () => {
+  const handleDateContainerClick = (e: React.MouseEvent) => {
     if (isNow) return;
     try {
       if (dateInputRef.current && 'showPicker' in HTMLInputElement.prototype) {
@@ -54,7 +56,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
           : 'border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 shadow-xs ring-1 ring-black/[0.03] dark:ring-white/[0.04]'
       }`}
     >
-      {/* Header bar with label and "Nu" toggle */}
+      {/* Header bar with label, interactive calendar trigger, and "Nu" toggle */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
@@ -68,21 +70,39 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
           )}
         </div>
 
-        {/* Use Now toggle with comfortable tap target */}
-        <button
-          type="button"
-          id={`${idPrefix}-btn-now`}
-          onClick={() => onToggleNow(!isNow)}
-          className={`flex items-center gap-1.5 min-h-[34px] px-3.5 py-1 text-xs font-medium rounded-xl transition-all ${
-            isNow
-              ? 'btn-liquid-glass-primary shadow-xs font-semibold'
-              : 'btn-liquid-glass text-neutral-600 dark:text-neutral-300'
-          }`}
-          title={isNow ? 'Lås upp från Nu' : 'Ställ in på Nu (uppdateras live)'}
-        >
-          <Radio className={`w-3 h-3 ${isNow ? 'animate-pulse' : ''}`} />
-          <span>Nu</span>
-        </button>
+        <div className="flex items-center gap-1.5">
+          {onOpenCalendar && !isNow && (
+            <button
+              type="button"
+              id={`${idPrefix}-btn-calendar`}
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenCalendar();
+              }}
+              className="btn-liquid-glass flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg text-sky-700 dark:text-sky-300 bg-sky-50/80 dark:bg-sky-950/40 border border-sky-200/80 dark:border-sky-800/60 hover:bg-sky-100 dark:hover:bg-sky-900/60 transition-all shadow-xs"
+              title="Öppna interaktiv kalender med realtidsförhandsvisning och tidsintervall"
+            >
+              <Calendar className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
+              <span>Interaktiv Kalender</span>
+            </button>
+          )}
+
+          {/* Use Now toggle with comfortable tap target */}
+          <button
+            type="button"
+            id={`${idPrefix}-btn-now`}
+            onClick={() => onToggleNow(!isNow)}
+            className={`flex items-center gap-1.5 min-h-[34px] px-3.5 py-1 text-xs font-medium rounded-xl transition-all ${
+              isNow
+                ? 'btn-liquid-glass-primary shadow-xs font-semibold'
+                : 'btn-liquid-glass text-neutral-600 dark:text-neutral-300'
+            }`}
+            title={isNow ? 'Lås upp från Nu' : 'Ställ in på Nu (uppdateras live)'}
+          >
+            <Radio className={`w-3 h-3 ${isNow ? 'animate-pulse' : ''}`} />
+            <span>Nu</span>
+          </button>
+        </div>
       </div>
 
       {/* Inputs row */}
@@ -90,13 +110,13 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
         {/* Date input */}
         <div
           onClick={handleDateContainerClick}
-          className={`sm:col-span-3 min-h-[44px] sm:min-h-[42px] min-w-0 relative flex items-center px-3 py-2 border rounded-xl transition-colors cursor-pointer ${
+          className={`sm:col-span-3 min-h-[44px] sm:min-h-[42px] min-w-0 relative flex items-center px-3 py-2 border rounded-xl transition-colors cursor-pointer group ${
             isNow
               ? 'bg-neutral-100/70 dark:bg-neutral-800/40 border-neutral-200 dark:border-neutral-700/50 cursor-default'
               : 'bg-white dark:bg-neutral-900/80 border-neutral-200 dark:border-neutral-700 hover:border-neutral-300 dark:hover:border-neutral-600 focus-within:border-neutral-900 dark:focus-within:border-neutral-400 focus-within:ring-1 focus-within:ring-neutral-900 dark:focus-within:ring-neutral-400'
           }`}
         >
-          <Calendar className="w-4 h-4 text-neutral-400 dark:text-neutral-500 mr-2.5 shrink-0 pointer-events-none" />
+          <Calendar className="w-4 h-4 text-neutral-400 group-hover:text-sky-500 dark:text-neutral-500 dark:group-hover:text-sky-400 mr-2.5 shrink-0 transition-colors" />
           <input
             ref={dateInputRef}
             id={`${idPrefix}-date`}

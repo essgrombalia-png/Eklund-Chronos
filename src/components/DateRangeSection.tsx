@@ -22,6 +22,7 @@ interface DateRangeSectionProps {
   endMetadata: DateMetadata;
   startError?: string | null;
   endError?: string | null;
+  onOpenCalendar?: (target: 'start' | 'end') => void;
 }
 
 export const DateRangeSection: React.FC<DateRangeSectionProps> = ({
@@ -43,6 +44,7 @@ export const DateRangeSection: React.FC<DateRangeSectionProps> = ({
   endMetadata,
   startError,
   endError,
+  onOpenCalendar,
 }) => {
   return (
     <div className="relative">
@@ -59,6 +61,7 @@ export const DateRangeSection: React.FC<DateRangeSectionProps> = ({
           onToggleNow={onToggleStartNow}
           metadata={startMetadata}
           errorMessage={startError}
+          onOpenCalendar={onOpenCalendar ? () => onOpenCalendar('start') : undefined}
         />
 
         {/* Swap button & Reset center column */}
@@ -100,6 +103,7 @@ export const DateRangeSection: React.FC<DateRangeSectionProps> = ({
           onToggleNow={onToggleEndNow}
           metadata={endMetadata}
           errorMessage={endError}
+          onOpenCalendar={onOpenCalendar ? () => onOpenCalendar('end') : undefined}
         />
       </div>
     </div>

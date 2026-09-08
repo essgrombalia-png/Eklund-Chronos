@@ -40,6 +40,7 @@ import { FavoritesModal } from './components/FavoritesModal';
 import { ExportModal } from './components/ExportModal';
 import { ShortcutsModal } from './components/ShortcutsModal';
 import { AboutModal } from './components/AboutModal';
+import { InteractiveCalendarModal } from './components/InteractiveCalendarModal';
 import { Toast } from './components/Toast';
 import { Footer } from './components/Footer';
 import { downloadDataAsPng } from './utils/exportPng';
@@ -136,6 +137,8 @@ export default function App() {
   const [isExportOpen, setIsExportOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [calendarTarget, setCalendarTarget] = useState<'start' | 'end'>('end');
 
   // History & Favorites state
   const [history, setHistory] = useState<HistoryItem[]>(() => getStoredHistory());
@@ -533,6 +536,10 @@ export default function App() {
           endMetadata={endMetadata}
           startError={!startDt.isValid ? 'Ogiltigt startdatum eller tid' : null}
           endError={!endDt.isValid ? 'Ogiltigt slutdatum eller tid' : null}
+          onOpenCalendar={(target) => {
+            setCalendarTarget(target);
+            setIsCalendarOpen(true);
+          }}
         />
 
         {/* Workday & Weekend Filter Control */}
@@ -649,6 +656,24 @@ export default function App() {
       <AboutModal
         isOpen={isAboutOpen}
         onClose={() => setIsAboutOpen(false)}
+      />
+
+      <InteractiveCalendarModal
+        isOpen={isCalendarOpen}
+        onClose={() => setIsCalendarOpen(false)}
+        target={calendarTarget}
+        onSelectDate={(dateStr, target) => {
+          if (target === 'end') {
+            setState((prev) => ({ ...prev, endDate: dateStr, endIsNow: false }));
+            triggerToast(`Slutdatum inställt på ${dateStr}`);
+          } else {
+            setState((prev) => ({ ...prev, startDate: dateStr, startIsNow: false }));
+            triggerToast(`Startdatum inställt på ${dateStr}`);
+          }
+        }}
+        state={state}
+        startMetadata={startMetadata}
+        endMetadata={endMetadata}
       />
     </div>
   );
