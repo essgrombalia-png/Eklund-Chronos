@@ -46,12 +46,12 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
   return (
     <div
       id={`${idPrefix}-container`}
-      className={`relative p-3.5 sm:p-5 rounded-2xl border transition-all ${
+      className={`relative p-3.5 sm:p-5 rounded-2xl border backdrop-blur-xl transition-all ${
         errorMessage
-          ? 'border-rose-300 dark:border-rose-900/60 bg-rose-50/30 dark:bg-rose-950/20'
+          ? 'border-rose-300 dark:border-rose-900/60 bg-rose-50/40 dark:bg-rose-950/25 ring-1 ring-rose-500/10'
           : isNow
-          ? 'border-neutral-300 dark:border-neutral-700/80 bg-neutral-50/60 dark:bg-neutral-900/50 shadow-xs'
-          : 'border-neutral-200/90 dark:border-neutral-800/90 bg-white dark:bg-[#13161B] shadow-xs'
+          ? 'border-emerald-300/70 dark:border-emerald-500/30 bg-white/90 dark:bg-[#11141b]/90 shadow-sm ring-1 ring-emerald-500/15'
+          : 'border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 shadow-xs ring-1 ring-black/[0.03] dark:ring-white/[0.04]'
       }`}
     >
       {/* Header bar with label and "Nu" toggle */}

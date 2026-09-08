@@ -244,7 +244,7 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
   return (
     <section
       id="time-unit-converter-section"
-      className="p-5 sm:p-7 md:p-8 rounded-2xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white dark:bg-[#13161B] shadow-xs sm:shadow-sm transition-all"
+      className="p-5 sm:p-7 md:p-8 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 backdrop-blur-xl shadow-xs sm:shadow-lg sm:shadow-black/5 dark:shadow-black/30 ring-1 ring-black/[0.03] dark:ring-white/[0.04] transition-all"
     >
       {/* Header bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-neutral-100 dark:border-neutral-800/80">

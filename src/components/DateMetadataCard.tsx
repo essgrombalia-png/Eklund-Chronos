@@ -105,7 +105,7 @@ export const DateMetadataCard: React.FC<DateMetadataCardProps> = ({
   return (
     <div
       id="date-details-container"
-      className="rounded-2xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white dark:bg-[#13161B] overflow-hidden shadow-xs"
+      className="rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 backdrop-blur-xl overflow-hidden shadow-xs ring-1 ring-black/[0.03] dark:ring-white/[0.04]"
     >
       <button
         type="button"

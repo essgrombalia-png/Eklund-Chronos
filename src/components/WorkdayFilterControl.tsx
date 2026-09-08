@@ -24,7 +24,7 @@ export const WorkdayFilterControl: React.FC<WorkdayFilterControlProps> = ({
   return (
     <div
       id="workday-filter-container"
-      className="p-3.5 sm:p-4 rounded-2xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white dark:bg-[#13161B] shadow-xs transition-all"
+      className="p-3.5 sm:p-4 rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 backdrop-blur-xl shadow-xs ring-1 ring-black/[0.03] dark:ring-white/[0.04] transition-all"
     >
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>

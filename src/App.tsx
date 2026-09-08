@@ -474,7 +474,11 @@ export default function App() {
   }, [history, favorites, state.timezone, triggerToast]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-canvas-pattern text-neutral-900 dark:text-neutral-100 transition-colors">
+    <div className="min-h-screen flex flex-col bg-canvas-pattern text-neutral-900 dark:text-neutral-100 transition-colors relative overflow-hidden">
+      {/* Background ambient lighting and micro-grid */}
+      <div className="bg-grid-overlay" aria-hidden="true" />
+      <div className="ambient-glow-top" aria-hidden="true" />
+
       {/* Top Header */}
       <Header
         historyCount={history.length}
@@ -489,7 +493,7 @@ export default function App() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-3.5 sm:px-6 py-4 sm:py-8 space-y-4 sm:space-y-6">
+      <main className="relative z-10 flex-1 max-w-6xl w-full mx-auto px-3.5 sm:px-6 py-4 sm:py-8 space-y-4 sm:space-y-6">
         {/* Top Control Bar: Timezone & Quick actions */}
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-2.5 pt-0.5 sm:pt-1">
           <div className="flex-1 min-w-0">

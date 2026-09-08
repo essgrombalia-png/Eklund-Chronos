@@ -79,7 +79,7 @@ export const DurationBreakdown: React.FC<DurationBreakdownProps> = ({
   return (
     <div
       id="duration-breakdown-container"
-      className="rounded-2xl border border-neutral-200/90 dark:border-neutral-800/90 bg-white dark:bg-[#13161B] overflow-hidden shadow-xs"
+      className="rounded-2xl border border-neutral-200/80 dark:border-neutral-800/80 bg-white/85 dark:bg-[#11141b]/85 backdrop-blur-xl overflow-hidden shadow-xs ring-1 ring-black/[0.03] dark:ring-white/[0.04]"
     >
       <div className="px-4 py-3.5 sm:px-6 sm:py-4 border-b border-neutral-100 dark:border-neutral-800/80 flex items-center justify-between">
         <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
