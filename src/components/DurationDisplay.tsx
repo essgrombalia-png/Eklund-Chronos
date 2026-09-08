@@ -37,7 +37,7 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
   return (
     <div
       id="duration-hero-container"
-      className="glass-card neon-border-subtle relative p-5 sm:p-7 md:p-8 rounded-2xl hover:shadow-xl dark:hover:shadow-black/60 transition-all duration-300 ease-out hover:scale-[1.008] overflow-hidden"
+      className="glass-card neon-border-subtle relative p-5 sm:p-7 md:p-8 rounded-2xl overflow-hidden"
     >
       {/* Subtle ambient light gradient in top corner */}
       <div className="absolute -top-16 -right-16 w-72 h-72 bg-gradient-to-br from-indigo-500/10 via-sky-500/10 to-transparent dark:from-sky-500/15 dark:via-indigo-500/10 dark:to-transparent rounded-full blur-3xl pointer-events-none" />

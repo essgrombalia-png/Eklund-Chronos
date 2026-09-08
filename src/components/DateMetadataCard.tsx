@@ -105,7 +105,7 @@ export const DateMetadataCard: React.FC<DateMetadataCardProps> = ({
   return (
     <div
       id="date-details-container"
-      className="glass-card rounded-2xl overflow-hidden hover:shadow-xl dark:hover:shadow-black/50 transition-all duration-300 ease-out hover:scale-[1.008]"
+      className="glass-card rounded-2xl overflow-hidden"
     >
       <button
         type="button"

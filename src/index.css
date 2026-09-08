@@ -248,6 +248,17 @@
     0 1px 3px 0 rgba(15, 23, 42, 0.03),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95),
     inset 0 -1px 1px 0 rgba(0, 0, 0, 0.02);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.glass-card:hover {
+  transform: scale(1.01);
+  box-shadow: 
+    0 12px 32px -4px rgba(15, 23, 42, 0.08),
+    0 2px 6px 0 rgba(15, 23, 42, 0.03),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.02);
 }
 
 .dark .glass-card {
@@ -259,6 +270,16 @@
     0 10px 32px -4px rgba(0, 0, 0, 0.55),
     0 1px 3px 0 rgba(0, 0, 0, 0.3),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.45);
+}
+
+.dark .glass-card:hover {
+  transform: scale(1.01);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 16px 40px -4px rgba(0, 0, 0, 0.7),
+    0 2px 6px 0 rgba(0, 0, 0, 0.4),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.22),
     inset 0 -1px 1px 0 rgba(0, 0, 0, 0.45);
 }
 

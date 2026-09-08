@@ -244,7 +244,7 @@ export const TimeUnitConverter: React.FC<TimeUnitConverterProps> = ({
   return (
     <section
       id="time-unit-converter-section"
-      className="glass-card p-5 sm:p-7 md:p-8 rounded-2xl hover:shadow-xl dark:hover:shadow-black/50 transition-all duration-300 ease-out hover:scale-[1.008]"
+      className="glass-card p-5 sm:p-7 md:p-8 rounded-2xl"
     >
       {/* Header bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-neutral-100 dark:border-neutral-800/80">

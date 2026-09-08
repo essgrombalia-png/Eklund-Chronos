@@ -79,7 +79,7 @@ export const DurationBreakdown: React.FC<DurationBreakdownProps> = ({
   return (
     <div
       id="duration-breakdown-container"
-      className="glass-card rounded-2xl overflow-hidden hover:shadow-xl dark:hover:shadow-black/50 transition-all duration-300 ease-out hover:scale-[1.008]"
+      className="glass-card rounded-2xl overflow-hidden"
     >
       <div className="px-4 py-3.5 sm:px-6 sm:py-4 border-b border-white/60 dark:border-white/10 flex items-center justify-between">
         <span className="text-xs font-bold uppercase tracking-wider text-neutral-600 dark:text-neutral-300 font-mono">

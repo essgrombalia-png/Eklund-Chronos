@@ -24,7 +24,7 @@ export const WorkdayFilterControl: React.FC<WorkdayFilterControlProps> = ({
   return (
     <div
       id="workday-filter-container"
-      className="glass-card p-3.5 sm:p-4 rounded-2xl hover:shadow-lg dark:hover:shadow-black/50 transition-all duration-300 ease-out hover:scale-[1.008]"
+      className="glass-card p-3.5 sm:p-4 rounded-2xl"
     >
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>

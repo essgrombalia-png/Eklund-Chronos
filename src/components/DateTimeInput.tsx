@@ -48,7 +48,7 @@ export const DateTimeInput: React.FC<DateTimeInputProps> = ({
   return (
     <div
       id={`${idPrefix}-container`}
-      className={`glass-card relative p-3.5 sm:p-5 rounded-2xl transition-all duration-300 ease-out hover:scale-[1.008] hover:shadow-lg dark:hover:shadow-black/50 ${
+      className={`glass-card relative p-3.5 sm:p-5 rounded-2xl ${
         errorMessage
           ? '!border-rose-300 dark:!border-rose-900/60 !bg-rose-50/30 dark:!bg-rose-950/20 ring-1 ring-rose-500/10'
           : isNow

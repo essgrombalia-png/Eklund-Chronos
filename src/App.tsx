@@ -30,6 +30,7 @@ import { DateRangeSection } from './components/DateRangeSection';
 import { WorkdayFilterControl } from './components/WorkdayFilterControl';
 import { DurationDisplay } from './components/DurationDisplay';
 import { TimeUnitConverter } from './components/TimeUnitConverter';
+import { ComparisonView } from './components/ComparisonView';
 import { DurationBreakdown } from './components/DurationBreakdown';
 import { Timeline } from './components/Timeline';
 import { DateMetadataCard } from './components/DateMetadataCard';
@@ -595,6 +596,20 @@ export default function App() {
         <TimeUnitConverter
           onCopyText={handleCopyText}
           currentTotals={durationResult.totals}
+        />
+
+        {/* Third Date Comparison & Multi-Range Delta Analyzer */}
+        <ComparisonView
+          startDate={state.startDate}
+          startTime={state.startTime}
+          endDate={state.endDate}
+          endTime={state.endTime}
+          startIsNow={state.startIsNow}
+          endIsNow={state.endIsNow}
+          timezone={state.timezone}
+          currentNow={currentNow}
+          baseDurationResult={durationResult}
+          onCopyText={handleCopyText}
         />
 
         {/* Timeline & Progress Visualization */}
