@@ -10,6 +10,7 @@ import {
   Briefcase,
 } from 'lucide-react';
 import { DurationResult } from '../types';
+import { FlipTimeDisplay } from './FlipDisplay';
 
 interface DurationDisplayProps {
   result: DurationResult;
@@ -125,7 +126,10 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
 
           <div className="mt-4 pt-4 border-t border-neutral-100 dark:border-neutral-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <p className="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 break-words">
-              Exakt: <span className="font-mono tabular-nums text-neutral-700 dark:text-neutral-300">{exactSentence}</span>
+              Exakt:{' '}
+              <span className="font-mono tabular-nums text-neutral-700 dark:text-neutral-300">
+                {exactSentence}
+              </span>
             </p>
 
             <button
@@ -142,7 +146,7 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
           </div>
         </div>
       ) : (
-        <div className="relative z-10 flex flex-col gap-2 py-1">
+        <div className="relative z-10 flex flex-col gap-2.5 py-1">
           {/* Primary calendar block: År · Månader · Dagar */}
           <div className="flex items-baseline">
             <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100 tabular-nums leading-tight break-words">
@@ -150,25 +154,37 @@ export const DurationDisplay: React.FC<DurationDisplayProps> = ({
             </h2>
           </div>
 
-          {/* Time row: Timmar : Minuter : Sekunder */}
+          {/* Time row: Timmar : Minuter : Sekunder with smooth flip animation */}
           <div className="flex items-center gap-2 sm:gap-3 mt-1.5 sm:mt-2 flex-wrap">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-neutral-400 dark:text-neutral-500 shrink-0" />
-              <span className="text-base xs:text-lg sm:text-2xl md:text-3xl font-medium font-mono tracking-wider text-neutral-700 dark:text-neutral-300 tabular-nums">
-                {timeFormatted}
+              <span className="text-base xs:text-lg sm:text-2xl md:text-3xl font-medium font-mono tracking-wider text-neutral-700 dark:text-neutral-300 tabular-nums inline-flex items-center">
+                <FlipTimeDisplay timeFormatted={timeFormatted} />
               </span>
             </div>
 
-            <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
-              tim · min · sek
-            </span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500 select-none">
+                tim · min · sek
+              </span>
+              {isLive && (
+                <span
+                  className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"
+                  title="Tid tickar i realtid"
+                />
+              )}
+            </div>
           </div>
 
           {!result.workingDaysInfo?.isWorkingDaysOnly && result.workingDaysInfo && (
             <div className="mt-2 flex items-center gap-1.5 text-xs text-neutral-500 dark:text-neutral-400 flex-wrap">
               <Briefcase className="w-3 h-3 text-neutral-400 dark:text-neutral-500 shrink-0" />
               <span>
-                Motsvarar ca <span className="font-semibold text-neutral-700 dark:text-neutral-300 tabular-nums">{result.workingDaysInfo.workingDays}</span> arbetsdagar ({result.workingDaysInfo.workingWeeks} v) exkl. helger
+                Motsvarar ca{' '}
+                <span className="font-semibold text-neutral-700 dark:text-neutral-300 tabular-nums">
+                  {result.workingDaysInfo.workingDays}
+                </span>{' '}
+                arbetsdagar ({result.workingDaysInfo.workingWeeks} v) exkl. helger
               </span>
             </div>
           )}
